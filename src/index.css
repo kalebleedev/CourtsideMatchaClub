@@ -1,0 +1,354 @@
+
+/* GLOBAL */
+* {
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* HEADER */
+.header {
+    background-color: green;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 15px 25px;
+}
+
+.header-left {
+    font-size: 25px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.header-right {
+    font-size: 25px;
+}
+
+/* VIDEO SECTION */
+.logo {
+    width: 100%;
+}
+
+.logo-pic {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.intro-video {
+    display: block;
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+}
+
+/* VIDEO OVERLAY */
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 25px;
+    padding: 20px;
+    text-align: center;
+}
+
+.video-overlay .text {
+    color: white;
+    font-size: clamp(28px, 4vw, 50px);
+    font-weight: bold;
+}
+
+.video-overlay .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 100%;
+    margin: 0;
+}
+
+.video-overlay button {
+    color: white;
+    background-color: green;
+    font-size: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* INTRODUCTION SECTION */
+.introduction {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.intro-left,
+.intro-right {
+    flex: 1;
+    min-width: 0;
+}
+
+.intro-left img {
+    display: block;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.intro-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 2;
+    padding: 40px;
+}
+
+/* OFFER SECTION */
+.offer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: green;
+    width: 100%;
+}
+
+.offer-left,
+.offer-right {
+    flex: 1;
+    min-width: 0;
+}
+
+.offer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 2;
+    padding: 40px;
+}
+
+.offer-right img {
+    display: block;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+/* ========================= */
+/* TABLET: 768px - 1024px     */
+/* ========================= */
+
+@media (max-width: 1024px) {
+
+    .header {
+        gap: 20px;
+        padding: 15px 20px;
+    }
+
+    .header-left,
+    .header-right {
+        font-size: 20px;
+    }
+
+    .navbar {
+        font-size: 17px;
+        gap: 12px;
+    }
+
+    .intro-video {
+        height: 65vh;
+    }
+
+    .video-overlay {
+        gap: 20px;
+    }
+
+    .video-overlay .text {
+        font-size: 38px;
+    }
+
+    .intro-left img,
+    .offer-right img {
+        height: 450px;
+    }
+
+    .intro-right,
+    .offer-left {
+        padding: 25px;
+        line-height: 1.7;
+    }
+}
+
+/* ========================= */
+/* MOBILE: 767px and below    */
+/* ========================= */
+
+@media (max-width: 767px) {
+
+    /* HEADER */
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .header-left,
+    .header-right {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .navbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    /* VIDEO */
+    .intro-video {
+        height: 60vh;
+        min-height: 400px;
+        object-fit: cover;
+    }
+
+    .video-overlay {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .video-overlay .text {
+        font-size: 30px;
+        line-height: 1.3;
+    }
+
+    .video-overlay .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        height: auto;
+    }
+
+    .video-overlay button {
+        width: min(100%, 250px);
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+
+    /* INTRODUCTION */
+    .introduction {
+        flex-direction: column;
+    }
+
+    .intro-left,
+    .intro-right {
+        width: 100%;
+        flex: none;
+    }
+
+    .intro-left img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .intro-right {
+        padding: 30px 20px;
+        line-height: 1.7;
+    }
+
+    /* OFFER */
+    .offer {
+        flex-direction: column;
+    }
+
+    .offer-left,
+    .offer-right {
+        width: 100%;
+        flex: none;
+    }
+
+    .offer-left {
+        padding: 30px 20px;
+        line-height: 1.7;
+    }
+
+    .offer-right img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+}
+
+/* ========================= */
+/* SMALL PHONES: 480px        */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    .header-left {
+        font-size: 18px;
+    }
+
+    .navbar {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .intro-video {
+        height: 55vh;
+        min-height: 350px;
+    }
+
+    .video-overlay .text {
+        font-size: 26px;
+    }
+
+    .video-overlay button {
+        font-size: 15px;
+    }
+
+    .intro-left img,
+    .offer-right img {
+        height: 250px;
+    }
+
+    .intro-right,
+    .offer-left {
+        padding: 25px 15px;
+        font-size: 15px;
+    }
+}
