@@ -1,7 +1,7 @@
 import {Routes, Route, Link} from 'react-router';
 import Home from './pages/Home';
 import Media from './pages/Media';
-import Services from './pages/Services';
+import Contact from './pages/Contact';
 import './App.css'
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
     <>
       <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/services" element={<Services/>}/>
           <Route path="/media" element={<Media/>}/>
+          <Route path="/contact" element={<Contact/>}/>
       </Routes>
     </>
   
