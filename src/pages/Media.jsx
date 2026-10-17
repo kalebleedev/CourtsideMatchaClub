@@ -1,5 +1,7 @@
 import logo from "../assets/pics/Courtside Matcha Club Logo.png";
-import { NavBar } from "../assets/components";
+import { NavBar, InstagramFeed, RecentEvents } from "../assets/components";
+import { Link } from "react-router";
+import Contact from "./Contact";
 
 export default function Media(){
     return(
@@ -14,8 +16,37 @@ export default function Media(){
                     </div>
     
                     <div className="header-right">
-                            <button>Book Now</button>
+                            <Link to="/contact" className="book-now-btn">Book Now</Link>
                     </div>
+            </div>
+
+            <div className="media-content">
+                    <InstagramFeed  widgetId="b6b3819f-d258-4d56-bf89-686037604028"/>
+            </div>
+
+            <div className="recent-events">
+                <h2>Recent Events</h2>
+                <RecentEvents/>
+            </div>
+
+            <div className="footer">
+                        <div className="business-info">
+                            <p>Courtside Matcha Club LLC</p>
+                            <p>CourtsideMatchaClub@gmail.com</p>
+                            <p>Est. 2026</p>
+                        </div>
+
+                        <div className="footer-nav">
+                            <h3>Our Work</h3>
+                            <NavBar />
+                        </div>
+
+                        <div className="footer-socials">
+                            <h3>Follow</h3>
+                            <p>Instagram</p>
+                            <p>TikTok</p>
+                            <p>Stay In Touch!</p>
+                        </div>
             </div>
 
         </div>

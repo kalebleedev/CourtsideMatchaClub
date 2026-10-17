@@ -4,6 +4,9 @@ import catering from "../assets/pics/catering.JPG"
 import introVid from "../assets/videos/matcha-cream.mp4";
 import customization from "../assets/pics/customize.jpg"
 import logo from "../assets/pics/Courtside Matcha Club Logo.png"
+import { Link } from "react-router";
+
+import Contact from "./Contact";
 
 export default function Home(){
     return (
@@ -19,7 +22,7 @@ export default function Home(){
                 </div>
 
                 <div className="header-right">
-                        <button>Book Now</button>
+                        <Link to="/contact" className="book-now-btn">Book Now</Link>
                 </div>
           </div>
 

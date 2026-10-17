@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import { sanityClient } from "../libs/sanity";
 
 import {Link} from 'react-router';
 
@@ -83,5 +84,96 @@ export function EventForm(){
 
             <button type="submit" className="submit-btn">Submit</button>
         </form>
+    )
+}
+
+export function InstagramFeed({widgetId}){
+    useEffect(() => {
+        if(document.querySelector("#elfsight-script")){
+            return;
+        }
+
+        const script = document.createElement("script");
+        script.id = "elfsight-script";
+        script.src="https://elfsightcdn.com/platform.js";
+        script.async = true;
+        document.body.appendChild(script);
+    }, []);
+
+    // widget id = b6b3819f-d258-4d56-bf89-686037604028
+    return (
+        <section className="instagram-section">
+            <h2>Follow our events!</h2>
+            <div key={widgetId} className={`elfsight-app-${widgetId}`} data-elfsight-app-lazy/>
+        </section>
+    )
+}
+
+export function RecentEvents(){
+    const [events, setEvents] = useState([]);
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        async function fetchEvents(){
+            try{
+                const query = `
+                    *[] {
+                        _id,
+                        _type,
+                        title,
+                        date,
+                        description
+                    }
+`;
+
+                const data = await sanityClient.fetch(query);
+                setEvents(data);
+            } catch (err) {
+                console.error("Error fetching events:", err);
+                setError("Unable to load recent events");
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchEvents();
+    }, []);
+
+    if(loading){
+        return <p>Loading Events....</p>
+    }
+
+    if(error){
+        return <p>{error}</p>
+    }
+
+    return(
+        <section className="recent-events">
+            <h1>Recent Events</h1>
+
+            <div className="events-grid">
+                    {events.map((event) => (
+                        <div className="event-card" key={event._id}>
+                                {event.imageUrl && (
+                                    <img
+                                        src={event.imageUrl}
+                                        alt={event.title}
+                                        loading="lazy"
+                                        />
+                                )}
+
+                                <div className="event-info">
+                                    <h2>{event.title}</h2>
+                                    <p>{event.date}</p>
+                                    <p>{event.description}</p>
+                                </div>
+                        </div>
+                    ))}
+            </div>
+
+            {events.length === 0 && (
+                <p>No events have been published yet.</p>
+            )}
+        </section>
     )
 }
