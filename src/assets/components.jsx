@@ -149,9 +149,8 @@ export function RecentEvents(){
 
     return(
         <section className="recent-events">
-            <h1>Recent Events</h1>
-
             <div className="events-grid">
+                <h1>Recent Events</h1>
                     {events.map((event) => (
                         <div className="event-card" key={event._id}>
                                 {event.imageUrl && (

@@ -312,12 +312,34 @@ img {
     text-align: center;
 }
 
+
 .recent-events h2{
     text-align: center;
 }
 /* ========================= */
 /* TABLET: 768px - 1024px     */
 /* ========================= */
+.events-grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.events-grid h1{
+    text-align: center;
+    text-decoration: underline;
+}
+.event-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 350px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: blue;
+}
 
 
 

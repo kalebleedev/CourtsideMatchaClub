@@ -25,7 +25,6 @@ export default function Media(){
             </div>
 
             <div className="recent-events">
-                <h2>Recent Events</h2>
                 <RecentEvents/>
             </div>
 
