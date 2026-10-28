@@ -23,13 +23,43 @@ export function VideoLoop({src, className=""}){
 }
 
 export function EventForm(){
-    const handleSubmit = (e) => {
+    const [status, setStatus] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async(e) => {
         e.preventDefault();
 
-        const formData = new FormData(e.currentTarget);
-        const data = Object.fromEntries(formData.entries());
+        const form = e.currentTarget;
+        const formData = new FormData(form);
 
-        console.log(data);
+       
+        setLoading(true);
+        setStatus("");
+
+        try {
+            const response = await fetch(
+                "https://formspree.io/f/xaeeogdl",
+                {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        Accept: "application/json"
+                    }
+                }
+            );
+
+            if (response.ok){
+                setStatus("Your event request was submitted!");
+                form.reset();
+            } else {
+                setStatus("Submission failed. Please try again.");
+            }
+        } catch (error){
+            console.log("Form submission error: ", error);
+            setStatus("Something went wrong");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return(
@@ -78,11 +108,12 @@ export function EventForm(){
                     <input type="text" id="address" name="address" placeholder="Event Location" required/>
                 </div>
                 <div className="form-group">
-                    <input id="notes" name="notes" row="5" placeholder="Tell us about your event..." required/>
+                    <textarea id="notes" name="notes" rows="5" placeholder="Tell us about your event..." required/>
                 </div>
             </div>
 
-            <button type="submit" className="submit-btn">Submit</button>
+            <button type="submit" className="submit-btn" disabled ={loading}>{loading ? "Submitting" : "Submit"}</button>
+            {status && <p className="form-status">{status}</p>}
         </form>
     )
 }
