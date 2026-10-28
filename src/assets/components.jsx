@@ -118,12 +118,13 @@ export function RecentEvents(){
         async function fetchEvents(){
             try{
                 const query = `
-                    *[] {
+                    *[_type == "Event"] | order(date desc) {
                         _id,
                         _type,
                         title,
                         date,
-                        description
+                        description,
+                        "imageUrl": image.asset->url
                     }
 `;
 
@@ -152,20 +153,21 @@ export function RecentEvents(){
             <div className="events-grid">
                 <h1>Recent Events</h1>
                     {events.map((event) => (
-                        <div className="event-card" key={event._id}>
-                                {event.imageUrl && (
-                                    <img
-                                        src={event.imageUrl}
-                                        alt={event.title}
-                                        loading="lazy"
-                                        />
-                                )}
-
+                    <div className="event-wrapper" key={event._id}>
+                        <div className="event-card" >
                                 <div className="event-info">
                                     <h2>{event.title}</h2>
                                     <p>{event.date}</p>
                                     <p>{event.description}</p>
                                 </div>
+                        </div>
+                        {event.imageUrl && (
+                                    <img
+                                        src={event.imageUrl}
+                                        alt={event.title}
+                                        className="event-image"
+                                        />
+                                )}
                         </div>
                     ))}
             </div>

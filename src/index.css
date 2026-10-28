@@ -322,12 +322,22 @@ img {
 .events-grid{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
+    margin-left: 10%;
+    gap: 10px;
 }
 
 .events-grid h1{
     text-align: center;
+    margin-right:10%;
     text-decoration: underline;
+}
+
+.event-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    
 }
 .event-card{
     display: flex;
@@ -337,10 +347,16 @@ img {
     text-align: center;
     width: 350px;
     height: 200px;
-    border-radius: 50%;
-    background-color: blue;
+    border-radius: 5%;
+    background-color:#224a11;
 }
 
+.event-image{
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
 
 
 @media (max-width: 1024px) {
@@ -352,7 +368,7 @@ img {
 
     .header-left,
     .header-right {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .navbar {
@@ -407,6 +423,10 @@ img {
         font-size: 20px;
         text-align: center;
     }
+    .book-now-btn{
+        font-size: 14px;
+        padding: 8px 14px;
+        border-radius: 50%;
     
     .footer{
         flex-direction: column;
@@ -533,7 +553,13 @@ img {
     .header-left {
         font-size: 18px;
     }
+    .book-now-btn{
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 50%;
 
+    }
+    
     .footer{
         font-size: 18px;
     }
@@ -566,4 +592,5 @@ img {
         padding: 25px 15px;
         font-size: 15px;
     }
+}
 }
