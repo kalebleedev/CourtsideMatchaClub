@@ -28,6 +28,10 @@ export default function Media(){
                 <RecentEvents/>
             </div>
 
+            <div className="socials">
+                <p>Follow us on Socials</p>
+            </div>
+
             <div className="footer">
                         <div className="business-info">
                             <p>Courtside Matcha Club LLC</p>

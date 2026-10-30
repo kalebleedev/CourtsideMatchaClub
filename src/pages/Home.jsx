@@ -1,17 +1,70 @@
-import { NavBar, VideoLoop } from "../assets/components"
+import { NavBar, VideoLoop, LoadingScreen } from "../assets/components"
 import communityPic from "../assets/pics/grit-cycle.jpeg"
 import catering from "../assets/pics/catering.JPG"
 import introVid from "../assets/videos/matcha-cream.mp4";
 import customization from "../assets/pics/customize.jpg"
 import logo from "../assets/pics/Courtside Matcha Club Logo.png"
 import { Link } from "react-router";
-
+import { useState, useEffect } from "react";
 import Contact from "./Contact";
 
 export default function Home(){
+        const [loading, setLoading] = useState(true);
+
+        useEffect(() => {
+                let cancelled = false;
+                async function waitForAssets(){
+                        const images = Array.from(
+                                document.querySelectorAll("img")
+                        );
+
+                        const imagePromises = images.map((img) => {
+                                if(img.complete){
+                                        return Promise.resolve();
+                                }
+
+                                return new Promise((resolve) => {
+                                        img.addEventListener("load", resolve, {once: true});
+                                        img.addEventListener("error", resolve, {once: true});
+                                });
+                        });
+
+                        const videos = Array.from(
+                                document.querySelectorAll("video")
+                        );
+
+                        const videoPromises = videos.map((video) => {
+                                if(video.readyState >= 2){
+                                        return Promise.resolve();
+                                }
+
+                                return new Promise((resolve) => {
+                                        video.addEventListener("loadeddata", resolve, {once: true});
+                                        video.addEventListener("error", resolve, {once: true});
+                                });
+                        });
+
+                        const minimumDelay = new Promise((resolve) => {
+                                setTimeout(resolve, 2000);
+                        })
+
+                        await Promise.all([...imagePromises, ...videoPromises, minimumDelay]);
+
+                        if(!cancelled){
+                                setLoading(false);
+                        }
+                }
+                waitForAssets();
+
+                return () => {
+                        cancelled = true;
+                };
+        }, []);
+
     return (
     <>
-    <div className="page-structure">
+    {loading && <LoadingScreen/>}
+    <div className="page-structure" style={{visibility: loading ? "hidden" : "visible"}}>
           <div className="header">
                 <div className="header-left">
                       <img src={logo}/>

@@ -1,5 +1,6 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 import { sanityClient } from "../libs/sanity";
+
 
 import {Link} from 'react-router';
 
@@ -64,8 +65,10 @@ export function EventForm(){
 
     return(
         <form className="event-form" onSubmit={handleSubmit}>
-            <h1>Book Your Event!</h1>
-            <p>Let us bring matcha to your next event!</p>
+            <h1>Catering Inquiry Form</h1>
+            <p>Let us bring matcha to your next event! Fill out the form and we'll be in touch as soon as possible to create
+                the best matcha experience for your event.
+            </p>
             
             <div className="form-row">
                 <div className="form-group">
@@ -119,7 +122,10 @@ export function EventForm(){
 }
 
 export function InstagramFeed({widgetId}){
+    const [loading, setLoading] = useState(true);
+    const feedRef = useRef(null);
     useEffect(() => {
+
         if(document.querySelector("#elfsight-script")){
             return;
         }
@@ -131,10 +137,64 @@ export function InstagramFeed({widgetId}){
         document.body.appendChild(script);
     }, []);
 
+    useEffect(() => {
+        setLoading(true);
+
+        const feed = feedRef.current;
+        if (!feed) return;
+
+        let cancelled = false;
+        let observer;
+
+        const minimumDelay = new Promise((resolve) => {
+            setTimeout(resolve, 2000);
+        });
+
+        const feedLoaded = new Promise((resolve) => {
+            const checkLoaded = () => {
+                const iframe = feed.querySelector("iframe");
+                if(iframe){
+                    resolve();
+                    observer?.disconnect();
+                }
+            };
+
+            observer = new MutationObserver(checkLoaded);
+
+            observer.observe(feed, {
+                childList: true,
+                subtree: true
+            });
+
+            checkLoaded();
+        });
+
+        const timeout = new Promise((resolve) => {
+            setTimeout(resolve, 8000);
+        });
+
+        async function waitForFeed(){
+            await Promise.all([minimumDelay, Promise.race([feedLoaded, timeout])]);
+            if (!cancelled){
+                setLoading(false);
+            }
+        }
+
+        waitForFeed();
+
+        return () => {
+            cancelled = true;
+            observer?.disconnect();
+        };
+
+    }, [widgetId]);
+
     // widget id = b6b3819f-d258-4d56-bf89-686037604028
     return (
         <section className="instagram-section">
             <h2>Follow our events!</h2>
+            {loading && <LoadingScreen/>}
+            <div ref={feedRef} className="instagram-feed" style={{visibility: loading ? "hidden" : "visible"}}></div>
             <div key={widgetId} className={`elfsight-app-${widgetId}`} data-elfsight-app-lazy/>
         </section>
     )
@@ -185,13 +245,7 @@ export function RecentEvents(){
                 <h1>Recent Events</h1>
                     {events.map((event) => (
                     <div className="event-wrapper" key={event._id}>
-                        <div className="event-card" >
-                                <div className="event-info">
-                                    <h2>{event.title}</h2>
-                                    <p>{event.date}</p>
-                                    <p>{event.description}</p>
-                                </div>
-                        </div>
+                        
                         {event.imageUrl && (
                                     <img
                                         src={event.imageUrl}
@@ -199,7 +253,15 @@ export function RecentEvents(){
                                         className="event-image"
                                         />
                                 )}
-                        </div>
+                        <div className="event-card" >
+                                <div className="event-info">
+                                    <h2>{event.title}</h2>
+                                    <p>{event.date}</p>
+                                    <p>{event.description}</p>
+                                </div>
+                    </div>
+
+            </div>
                     ))}
             </div>
 
@@ -208,4 +270,13 @@ export function RecentEvents(){
             )}
         </section>
     )
+}
+
+export function LoadingScreen(){
+    return (
+        <div className="loading-screen">
+            <div className="spinner"></div>
+            <h2>Loading...</h2>
+        </div>
+    );
 }
