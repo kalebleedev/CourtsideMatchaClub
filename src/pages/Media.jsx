@@ -30,6 +30,7 @@ export default function Media(){
 
             <div className="socials">
                 <p>Follow us on Socials</p>
+                <button>Instagram</button>
             </div>
 
             <div className="footer">

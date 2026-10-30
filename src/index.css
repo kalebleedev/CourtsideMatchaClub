@@ -449,8 +449,8 @@ img {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: start;
+    text-align: start;
     margin-left: 100px;
     width: 350px;
     height: 200px;
@@ -461,9 +461,42 @@ img {
 .event-image{
     width: 800px;
     height: 600px;
-    object-fit: cover;
+    object-fit: fill;
     display: block;
 }
+
+.event-info{
+    margin-top: 100px;
+}
+
+.event-info h2{
+    text-align: start;
+    font-size: 30px;
+}
+
+.event-info p {
+    font-size: 20px;
+}
+
+
+.socials  {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.socials p {
+    font-size: 30px;
+    margin-left: 45%;
+}
+
+.socials button{
+    width: 100px;
+    height: 50px;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
 
 
 @media (max-width: 1024px) {

@@ -256,8 +256,12 @@ export function RecentEvents(){
                         <div className="event-card" >
                                 <div className="event-info">
                                     <h2>{event.title}</h2>
-                                    <p>{event.date}</p>
-                                    <p>{event.description}</p>
+                                        <br></br>
+                                    <p>WHEN: {event.date}</p>
+                                        <br></br>
+                                    <p>ABOUT: {event.description}</p>
+
+                                    <button>Event Photos</button>
                                 </div>
                     </div>
 
