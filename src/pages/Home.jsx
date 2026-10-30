@@ -37,8 +37,8 @@ export default function Home(){
                                         Welcome to the Club!
                                 </div>
                                 <div className="buttons">
-                                    <button>Book Now</button>
-                                    <button>Recent Events</button>
+                                    <Link to="/contact" className="book-now-btn">Book Now</Link>
+                                    <Link to="/media" className="recent-events-btn">Recent Events</Link>
                                 </div>
                         </div>
                          
@@ -57,8 +57,8 @@ export default function Home(){
 Built through passion and a love for bringing people together, Courtside Matcha Club has already served at multiple events and continues to grow through local pop-ups, social gatherings, sports communities, and private bookings.
                             We specialize in handcrafted matcha drinks, signature cream tops, and elevated café-style beverages served through a modern pop-up experience.</p>
                             <div className="buttons">
-                                    <button>Book Now</button>
-                                    <button>Recent Events</button>
+                                    <Link to="/contact" className="intro-book-now">Book Now</Link>
+                                    <Link to="/media" className="intro-recent-events">Recent Events</Link>
                                 </div>
                         </div>
                         
@@ -93,6 +93,40 @@ Built through passion and a love for bringing people together, Courtside Matcha 
                                     <li>Custom Signs: A-Frame Inserts, Event Posters (you keep it all afterwards!)</li>
                                     <li>Item Customizations: Oat/Almond Milk, Optional Flavor Requests</li>
                                     <li>We recommend booking at least two weeks in advance to ensure we have enough time to plan, customize, and create the perfect matcha experience with you.</li>
+                                </ul>
+                        </div>
+
+                  </div>
+
+                  <div className="packages">
+                        <div className="packages-content">
+                                <h1>Packages</h1>
+                                <ul>
+                                        <p>Tier 1: 20 Drink Package---$175</p>
+                                        <li>Choice of TWO Signature Drinks</li>
+                                        <br></br>
+                                        <p>Tier 2: 20 Drink Package---$175</p>
+                                        <li>Choice of TWO Signature Drinks</li>
+                                        <br></br>
+                                        <p>Tier 3: 20 Drink Package---$175</p>
+                                        <li>Choice of TWO Signature Drinks</li>
+                                        <br></br>
+                                        <p>Tier 4: 20 Drink Package---$175</p>
+                                        <li>Choice of TWO Signature Drinks</li>
+                                        <br></br>
+
+                                        <p>Signature Drinks</p>
+                                        <li>Matcha Latte</li>
+                                        <li>Strawberry Matcha Latte</li>
+                                        <li>Lavender Matcha Latte</li>
+                                        <li>Vanilla Matcha Latte</li>
+                                        <li>Maple Cinnamon Matcha Latte</li>
+                                        <li>Banana Matcha Latte (Housemade Cream Top)</li>
+                                        <li>Double Matcha Latte (Housemade Cream Top)</li>
+                                        <li>Yuzu Matcha Tonic</li>
+                                        <li>Sparkling Matcha Lemonade</li>
+
+
                                 </ul>
                         </div>
 
