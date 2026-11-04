@@ -1,5 +1,6 @@
 import logo from "../assets/pics/Courtside Matcha Club Logo.png";
 import { NavBar, EventForm } from "../assets/components";
+import { Link } from "react-router";
 
 export default function Contact(){
     return(
@@ -14,7 +15,7 @@ export default function Contact(){
                            </div>
            
                            <div className="header-right">
-                                   <button>Book Now</button>
+                                   <Link to="/contact" className="book-now-btn">Book Now</Link>
                            </div>
                    </div>
 
@@ -29,15 +30,11 @@ export default function Contact(){
                             <p>Est. 2026</p>
                         </div>
 
-                        <div className="footer-nav">
-                            <h3>Our Work</h3>
-                            <NavBar />
-                        </div>
+                        
 
                         <div className="footer-socials">
                             <h3>Follow</h3>
-                            <p>Instagram</p>
-                            <p>TikTok</p>
+                            <a href="https://www.instagram.com/courtsidematchaclub/" target="_blank" rel="noopener noreferrer" className="icon"><i class="bi bi-instagram"></i></a>
                             <p>Stay In Touch!</p>
                         </div>
                   </div>

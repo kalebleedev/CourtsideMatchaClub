@@ -7,6 +7,7 @@ import logo from "../assets/pics/Courtside Matcha Club Logo.png"
 import { Link } from "react-router";
 import { useState, useEffect } from "react";
 import Contact from "./Contact";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Home(){
         const [loading, setLoading] = useState(true);
@@ -119,9 +120,9 @@ Built through passion and a love for bringing people together, Courtside Matcha 
 
                   <div className="offer">
                         <div className="offer-left">
-                            <h1>What We Offer</h1>
+                            <h1>WHAT WE OFFER</h1>
                             <p>From private parties and pop-ups to sports events, schools, and large social gatherings, Courtside Matcha Club brings a clean, stylish, and unforgettable experience to every event.</p>
-                            <h1>What's Included</h1>
+                            <h1>WHAT'S INCLUDED</h1>
                             <p>All Inclusive Pricing: Ingredients, Labor, Setup + Breakdown, Travel within service area, Aesthetic signage, Exceptional service</p>
                             <p>Premium Ingredients: Ceremonial Grade Matcha, Lactose Free Whole Milk, Organic Sweeteners, Fresh Fruit Cream Tops, Quality Cups/Lids, Branded Signage</p>
                             <p>Fully insured with Certificate of Insurance and Food Safety Certification for safe, compliant, and professional service</p>
@@ -139,7 +140,7 @@ Built through passion and a love for bringing people together, Courtside Matcha 
                         </div>
 
                         <div className="additional-right">
-                                <h1>Add Ons & Customization</h1>
+                                <h1>ADD ONS & CUSTOMIZATION</h1>
                                 <ul>
                                     <li>Custom Menu Design: Event Name, Company Logos, Custom Colors, Signature Drink Names, You name it, we'll do it</li>
                                     <li>Custom Stickers: Event Specific Logos</li>
@@ -155,7 +156,7 @@ Built through passion and a love for bringing people together, Courtside Matcha 
                         <div className="packages-content">
                                 
                                         <div className="tiers">
-                                                <h1>Packages</h1>
+                                                <h1>PACKAGES</h1>
                                                 <ul>
                                                         <p>Tier 1: 20 Drink Package---$175</p>
                                                         <li>Choice of TWO Signature Drinks</li>
@@ -173,7 +174,7 @@ Built through passion and a love for bringing people together, Courtside Matcha 
                                 
                         
                                         <div className="drinks">
-                                                <h1>Signature Drinks</h1>
+                                                <h1>SIGNATURE DRINKS</h1>
                                                 
                                                 <p>Matcha Latte</p>
                                                 <p>Strawberry Matcha Latte</p>
@@ -197,15 +198,11 @@ Built through passion and a love for bringing people together, Courtside Matcha 
                             <p>Est. 2026</p>
                         </div>
 
-                        <div className="footer-nav">
-                            <h3>Our Work</h3>
-                            <NavBar />
-                        </div>
+                        
 
                         <div className="footer-socials">
                             <h3>Follow</h3>
-                            <p>Instagram</p>
-                            <p>TikTok</p>
+                            <a href="https://www.instagram.com/courtsidematchaclub/" target="_blank" rel="noopener noreferrer" className="icon"><i class="bi bi-instagram"></i></a>
                             <p>Stay In Touch!</p>
                         </div>
                   </div>

@@ -24,7 +24,7 @@ export default function Media(){
                     <InstagramFeed  widgetId="b6b3819f-d258-4d56-bf89-686037604028"/>
             </div>
 
-            <div className="recent-events-content">
+            <div className="recent-events-container">
                 <RecentEvents/>
             </div>
 
@@ -36,18 +36,14 @@ export default function Media(){
                             <p>Est. 2026</p>
                         </div>
 
-                        <div className="footer-nav">
-                            <h3>Our Work</h3>
-                            <NavBar />
-                        </div>
+                        
 
                         <div className="footer-socials">
                             <h3>Follow</h3>
-                            <p>Instagram</p>
-                            <p>TikTok</p>
+                            <a href="https://www.instagram.com/courtsidematchaclub/" target="_blank" rel="noopener noreferrer" className="icon"><i class="bi bi-instagram"></i></a>
                             <p>Stay In Touch!</p>
                         </div>
-            </div>
+                  </div>
 
         </div>
     )

@@ -65,7 +65,7 @@ export function EventForm(){
 
     return(
         <form className="event-form" onSubmit={handleSubmit}>
-            <h1>Catering Inquiry Form</h1>
+            <h1>CATERING INQUIRY FORM</h1>
             <p>Let us bring matcha to your next event! Fill out the form and we'll be in touch as soon as possible to create
                 the best matcha experience for your event.
             </p>
@@ -77,46 +77,47 @@ export function EventForm(){
                 <div className="form-group">
                     <input type="text" id="lname" name="lname" placeholder="Last Name"required/>
                 </div>
-            </div>
+            
 
-            <div className="form-row">
+            
                 <div className="form-group">
                     <input type="email" id="email" name="email" placeholder="Email" required/>
                 </div>
                 <div className="form-group">
                     <input type="tel" id="phone" name="phone" placeholder="Phone Number" required/>
                 </div>
-            </div>
+            
 
-            <div className="form-row">
+            
                 <div className="form-group">
                     <input type="date" id="event-date" name="eventDate" placeholder="Event Date" required/>
                 </div>
                 <div className="form-group">
                     <input type="number" id="guest-num" name="guestNum" min="1" placeholder="Number of Guests" required />
                 </div>
-            </div>
+            
 
-            <div className="form-row">
+            
                 <div className="form-group">
                     <input type="time" id="start-time" name="startTime" placeholder="Start Time" required/>
                 </div>
                 <div className="form-group">
                     <input type="number" id="duration" name="duration" min="1" step="0.5" placeholder="Event Duration" required/>
                 </div>
-            </div>
+            
 
-            <div className="form-row">
+            
                 <div className="form-group">
                     <input type="text" id="address" name="address" placeholder="Event Location" required/>
                 </div>
                 <div className="form-group">
                     <textarea id="notes" name="notes" rows="5" placeholder="Tell us about your event..." required/>
                 </div>
+
+                <button type="submit" className="submit-btn" disabled ={loading}>{loading ? "Submitting" : "Submit"}</button>
+            {status && <p className="form-status">{status}</p>}
             </div>
 
-            <button type="submit" className="submit-btn" disabled ={loading}>{loading ? "Submitting" : "Submit"}</button>
-            {status && <p className="form-status">{status}</p>}
         </form>
     )
 }
