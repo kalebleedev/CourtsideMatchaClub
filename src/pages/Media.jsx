@@ -24,14 +24,10 @@ export default function Media(){
                     <InstagramFeed  widgetId="b6b3819f-d258-4d56-bf89-686037604028"/>
             </div>
 
-            <div className="recent-events">
+            <div className="recent-events-content">
                 <RecentEvents/>
             </div>
 
-            <div className="socials">
-                <p>Follow us on Socials</p>
-                <button>Instagram</button>
-            </div>
 
             <div className="footer">
                         <div className="business-info">

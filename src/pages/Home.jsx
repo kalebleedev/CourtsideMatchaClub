@@ -153,34 +153,39 @@ Built through passion and a love for bringing people together, Courtside Matcha 
 
                   <div className="packages">
                         <div className="packages-content">
-                                <h1>Packages</h1>
-                                <ul>
-                                        <p>Tier 1: 20 Drink Package---$175</p>
-                                        <li>Choice of TWO Signature Drinks</li>
-                                        <br></br>
-                                        <p>Tier 2: 20 Drink Package---$175</p>
-                                        <li>Choice of TWO Signature Drinks</li>
-                                        <br></br>
-                                        <p>Tier 3: 20 Drink Package---$175</p>
-                                        <li>Choice of TWO Signature Drinks</li>
-                                        <br></br>
-                                        <p>Tier 4: 20 Drink Package---$175</p>
-                                        <li>Choice of TWO Signature Drinks</li>
-                                        <br></br>
-
-                                        <p>Signature Drinks</p>
-                                        <li>Matcha Latte</li>
-                                        <li>Strawberry Matcha Latte</li>
-                                        <li>Lavender Matcha Latte</li>
-                                        <li>Vanilla Matcha Latte</li>
-                                        <li>Maple Cinnamon Matcha Latte</li>
-                                        <li>Banana Matcha Latte (Housemade Cream Top)</li>
-                                        <li>Double Matcha Latte (Housemade Cream Top)</li>
-                                        <li>Yuzu Matcha Tonic</li>
-                                        <li>Sparkling Matcha Lemonade</li>
-
-
-                                </ul>
+                                
+                                        <div className="tiers">
+                                                <h1>Packages</h1>
+                                                <ul>
+                                                        <p>Tier 1: 20 Drink Package---$175</p>
+                                                        <li>Choice of TWO Signature Drinks</li>
+                                                        
+                                                        <p>Tier 2: 20 Drink Package---$175</p>
+                                                        <li>Choice of TWO Signature Drinks</li>
+                                                        
+                                                        <p>Tier 3: 20 Drink Package---$175</p>
+                                                        <li>Choice of TWO Signature Drinks</li>
+                                                        
+                                                        <p>Tier 4: 20 Drink Package---$175</p>
+                                                        <li>Choice of TWO Signature Drinks</li>
+                                                </ul>
+                                        </div>
+                                
+                        
+                                        <div className="drinks">
+                                                <h1>Signature Drinks</h1>
+                                                
+                                                <p>Matcha Latte</p>
+                                                <p>Strawberry Matcha Latte</p>
+                                                <p>Lavender Matcha Latte</p>
+                                                <p>Vanilla Matcha Latte</p>
+                                                <p>Maple Cinnamon Matcha Latte</p>
+                                                <p>Banana Matcha Latte (Housemade Cream Top)</p>
+                                                <p>Double Matcha Latte (Housemade Cream Top)</p>
+                                                <p>Yuzu Matcha Tonic</p>
+                                                <p>Sparkling Matcha Lemonade</p>
+                                                
+                                        </div>
                         </div>
 
                   </div>

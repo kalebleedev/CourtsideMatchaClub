@@ -38,9 +38,25 @@ img {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 50px;
     flex-wrap: wrap;
-    gap: 15px;
-    font-size: 20px;
+    gap: 35px;
+    font-size: 30px;
+    font-family: cursive;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    color: black;
+}
+
+.navbar a.active{
+    text-decoration: underline;
+    text-underline-offset: 10px;
 }
 
 .header-right {
@@ -67,6 +83,7 @@ img {
     text-decoration: none;
     cursor: pointer;
 }
+
 
 
 
@@ -287,17 +304,23 @@ img {
     justify-content: center;
    
     align-items: center;
-    background-color: white;
+    
     width: 100%;
+    background: linear-gradient(
+        to right,
+        #224a11 50%, white 50%
+    );
+
 }
 
 .packages-content{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
     line-height: 2;
     padding: 20px;
     color: #b3974d;
+    gap: 400px;
 }
 
 .packages-content p{
@@ -306,6 +329,20 @@ img {
 
 .packages-content li{
     text-align: start;
+}
+
+.tiers p{
+   font-size: 25px; 
+   font-weight: bold;
+   text-decoration: underline;
+   text-underline-offset: 5px;
+}
+
+
+.drinks p{
+    font-size: 25px; 
+    font-weight: bold;
+    text-align: center;
 }
 
 
@@ -412,38 +449,46 @@ img {
 
 
 .instagram-section h2{
-    text-align: center;
+    text-align: left;
+    font-size: 50px;
+    margin-left:12%;
+    color: #224a11;
+    font-family: cursive;
 }
 
 
 .recent-events{
+    width: 100%;
     background-color: #224a11;
 }
 .recent-events h2{
     text-align: center;
 }
-/* ========================= */
-/* TABLET: 768px - 1024px     */
-/* ========================= */
+
 .events-grid{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: left;
-    margin-left: 10%;
-    gap: 10px;
+    margin: 0;
+    padding: 0;
 }
 
+
+
 .events-grid h1{
-    text-align: center;
+    text-align: left;
+    font-size: 50px;
     margin-right:10%;
-    text-decoration: underline;
+    color: #224a11;
+    font-family: cursive;
 }
 
 .event-wrapper{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    
+   display: grid;
+   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+   width: 100%;
+   min-height: 600px;
+   gap: 0;
 }
 .event-card{
     display: flex;
@@ -458,15 +503,32 @@ img {
     color: white;
 }
 
+.recent-events-container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 .event-image{
-    width: 800px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
+    max-height: 700px;
     object-fit: fill;
     display: block;
+    margin-left: 5%;
 }
 
 .event-info{
     margin-top: 100px;
+}
+
+.event-info button{
+    width: 130px;
+    height: 50px;
+    color:#224a11;
+    font-size: 20px;
+    background-color: white;
+    font-family: cursive;
 }
 
 .event-info h2{

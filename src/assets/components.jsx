@@ -2,15 +2,15 @@ import {useState, useEffect, useRef} from "react";
 import { sanityClient } from "../libs/sanity";
 
 
-import {Link} from 'react-router';
+import {Link, NavLink} from 'react-router';
 
 export function NavBar(){
    
     return (
         <nav className="navbar">
-            <Link to="/">Home</Link>
-            <Link to="/media">Media</Link>
-            <Link to="/contact">Contact</Link>
+            <NavLink to="/" end>Home</NavLink>
+            <NavLink to="/media">Media</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
         </nav>
     )
 }
@@ -256,10 +256,8 @@ export function RecentEvents(){
                         <div className="event-card" >
                                 <div className="event-info">
                                     <h2>{event.title}</h2>
-                                        <br></br>
-                                    <p>WHEN: {event.date}</p>
-                                        <br></br>
-                                    <p>ABOUT: {event.description}</p>
+                                    <p>When: {event.date}</p>
+                                    <p>{event.description}</p>
 
                                     <button>Event Photos</button>
                                 </div>
