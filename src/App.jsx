@@ -2,7 +2,9 @@ import {Routes, Route, Link} from 'react-router';
 import Home from './pages/Home';
 import Media from './pages/Media';
 import Contact from './pages/Contact';
+import EventPhotos from './pages/EventPhotos';
 import './App.css'
+
 
 function App() {
   return(
@@ -11,6 +13,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/media" element={<Media/>}/>
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="/eventPhotos" element={<EventPhotos/>}/>
       </Routes>
     </>
   

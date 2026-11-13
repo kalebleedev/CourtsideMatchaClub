@@ -260,7 +260,7 @@ export function RecentEvents(){
                                     <p>When: {event.date}</p>
                                     <p>{event.description}</p>
 
-                                    <button>Event Photos</button>
+                                    <Link to="/eventPhotos" className="event-photos-btn">Event Photos</Link>
                                 </div>
                     </div>
 
