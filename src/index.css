@@ -1398,4 +1398,19 @@ gap: 0;
     .recent-events {
         background: #224a11;
     }
+
+    .photo-grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;               
+    }
+
+    .photo-grid img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        object-fit: cover;
+    }
 }
