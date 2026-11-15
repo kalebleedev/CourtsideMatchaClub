@@ -85,16 +85,16 @@ export default function EventPhotos(){
                     <h2>{event.title}</h2>
                     <p>{event.date}</p>
 
-                    <div className="photo-grid">
-                        {event.photos?.map((photo) => (
-                            <img
-                                key={photo._key}
-                                src={photo.url}
-                                alt={photo.alt || event.title}
-                                loading="lazy"
-                            />
-                        ))}
-                    </div>
+                        <div className="photo-grid">
+                            {event.photos?.map((photo) => (
+                                <img
+                                    key={photo._key}
+                                    src={photo.url}
+                                    alt={photo.alt || event.title}
+                                    loading="lazy"
+                                />
+                            ))}
+                        </div>
                     
                     {(!event.photos || event.photos.length === 0) && (
                         <p>No photos available for this event.</p>
@@ -102,6 +102,21 @@ export default function EventPhotos(){
                 </div>
             )}
         </div>
+                    <div className="footer">
+                            <div className="business-info">
+                                <p>Courtside Matcha Club LLC</p>
+                                <p>CourtsideMatchaClub@gmail.com</p>
+                                <p>Est. 2026</p>
+                            </div>
+
+                            
+
+                            <div className="footer-socials">
+                                <h3>Follow</h3>
+                                <a href="https://www.instagram.com/courtsidematchaclub/" target="_blank" rel="noopener noreferrer" className="icon"><i class="bi bi-instagram"></i></a>
+                                <p>Stay In Touch!</p>
+                            </div>
+                    </div>
         </div>
         
     )
