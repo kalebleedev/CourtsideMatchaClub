@@ -919,8 +919,8 @@ gap: 0;
 
 }
 
-.form-group input, .form-group textarea{
-
+.form-group input, .form-group textarea, .form-group select{
+    display: block;
   width: 100%; 
 
   box-sizing: border-box; 
@@ -1336,16 +1336,21 @@ gap: 0;
         font-size: 25px;
     }
 
-    .event-form input, select, textarea{
+    
+    .form-row {
+        gap: 18px;
+    }
+
+    .form-group input[type="date"],
+    .form-group input[type="time"],
+    .form-group input[type="datetime-local"]{
         display: block;
         width: 100%;
         max-width: 100%;
         min-width: 0;
         box-sizing: border-box;
-        margin-bottom: 20px;
-    }
-    .form-row {
-        gap: 18px;
+        -webkit-appearance: none;
+        appearance: none;
     }
 
     /* MEDIA */
