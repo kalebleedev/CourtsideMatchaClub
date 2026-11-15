@@ -1,16 +1,20 @@
 import {useState, useEffect } from "react";
 import { sanityClient } from "../libs/sanity";
+import {Link, useParams } from "react-router";
+import { NavBar } from "../assets/components";
+import logo from "../assets/pics/Courtside Matcha Club Logo.png";
 
 export default function EventPhotos(){
-    const [events, setEvents] = useState([]);
+    const [event, setEvent] = useState(null);
     const [loading, setLoading] = useState(true);
+    const {id} = useParams();
 
     useEffect(() => {
+        let cancelled = false;
         async function fetchEventPhotos(){
             try{
                 const query = `
-                    *[_type == "Event" && defined(gallery[0])]
-                    | order(date desc) {
+                    *[_type == "Event" && _id == $id][0] {
                         _id,
                         title, 
                         date,
@@ -23,30 +27,60 @@ export default function EventPhotos(){
                     }
                 `;
 
-                const data = await sanityClient.fetch(query);
-                setEvents(data)
+                const data = await sanityClient.fetch(query, {id});
+                if (!cancelled){
+                    setEvent(data);
+                }
             } catch (error){
                 console.error("Error fetching photos:", error);
             } finally {
-                setLoading(false);
+                if (!cancelled){
+                    setLoading(false);
+                }
             }
         }
-        fetchEventPhotos();
-    }, []);
+            if(id){
+                fetchEventPhotos();
+            } else {
+                setLoading(false);
+                setEvent(null);
+            }
+
+            return () =>{
+                cancelled = true;
+            }
+    }, [id]);
 
     if (loading){
         return <p>Loading Event Photos</p>
     }
 
     return (
-        <div className="event-photos-page">
+        <div className='page-structure'>
+            <div className="header">
+                           <div className="header-left">
+                                   <img src={logo}/>
+                           </div>
+                           
+                           <div className="navigation">
+                               <NavBar />
+                           </div>
+           
+                           <div className="header-right">
+                                   <Link to="/contact" className="book-now-btn">Book Now</Link>
+                           </div>
+            </div>
+
+            <div className="event-photos-page">
             <h1>Event Photos</h1>
 
-            {events.length === 0 && (
-                <p>No event photos available</p>
-            )}
-
-            {events.map((event) => (
+            {loading ? (
+                <p>Loading Event Photos...</p>
+            ) : !event ? (
+                <p>Event not found</p> 
+            ) : (
+                
+        
                 <div className="event-gallery" key={event._id}>
                     <h2>{event.title}</h2>
                     <p>{event.date}</p>
@@ -61,9 +95,15 @@ export default function EventPhotos(){
                             />
                         ))}
                     </div>
+                    
+                    {(!event.photos || event.photos.length === 0) && (
+                        <p>No photos available for this event.</p>
+                    )}
                 </div>
-            ))}
+            )}
         </div>
+        </div>
+        
     )
 }
 

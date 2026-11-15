@@ -123,91 +123,24 @@ export function EventForm(){
 }
 
 export function InstagramFeed({widgetId}){
-    const [loading, setLoading] = useState(true);
-    const feedRef = useRef(null);
-    useEffect(() => {
-
-        if(document.querySelector("#elfsight-script")){
-            return;
-        }
-
-        const script = document.createElement("script");
-        script.id = "elfsight-script";
-        script.src="https://elfsightcdn.com/platform.js";
-        script.async = true;
-        document.body.appendChild(script);
-    }, []);
-
-    useEffect(() => {
-        setLoading(true);
-
-        const feed = feedRef.current;
-        if (!feed) return;
-
-        let cancelled = false;
-        let observer;
-
-        const minimumDelay = new Promise((resolve) => {
-            setTimeout(resolve, 2000);
-        });
-
-        const feedLoaded = new Promise((resolve) => {
-            const checkLoaded = () => {
-                const iframe = feed.querySelector("iframe");
-                if(iframe){
-                    resolve();
-                    observer?.disconnect();
-                }
-            };
-
-            observer = new MutationObserver(checkLoaded);
-
-            observer.observe(feed, {
-                childList: true,
-                subtree: true
-            });
-
-            checkLoaded();
-        });
-
-        const timeout = new Promise((resolve) => {
-            setTimeout(resolve, 8000);
-        });
-
-        async function waitForFeed(){
-            await Promise.all([minimumDelay, Promise.race([feedLoaded, timeout])]);
-            if (!cancelled){
-                setLoading(false);
-            }
-        }
-
-        waitForFeed();
-
-        return () => {
-            cancelled = true;
-            observer?.disconnect();
-        };
-
-    }, [widgetId]);
-
     // widget id = b6b3819f-d258-4d56-bf89-686037604028
     return (
         <section className="instagram-section">
             <h2>Follow our events!</h2>
-            {loading && <LoadingScreen/>}
-            <div ref={feedRef} className="instagram-feed" style={{visibility: loading ? "hidden" : "visible"}}></div>
             <div key={widgetId} className={`elfsight-app-${widgetId}`} data-elfsight-app-lazy/>
         </section>
     )
 }
 
 export function RecentEvents(){
-    const [events, setEvents] = useState([]);
+    const [event, setEvent] = useState([]);
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null);
 
     useEffect(() => {
         async function fetchEvents(){
+            setLoading(true);
+            setEvent(null)
             try{
                 const query = `
                     *[_type == "Event"] | order(date desc) {
@@ -221,7 +154,7 @@ export function RecentEvents(){
 `;
 
                 const data = await sanityClient.fetch(query);
-                setEvents(data);
+                setEvent(data);
             } catch (err) {
                 console.error("Error fetching events:", err);
                 setError("Unable to load recent events");
@@ -244,23 +177,23 @@ export function RecentEvents(){
         <section className="recent-events">
             <div className="events-grid">
                 <h1>Recent Events</h1>
-                    {events.map((event) => (
-                    <div className="event-wrapper" key={event._id}>
+                    {event.map((events) => (
+                    <div className="event-wrapper" key={events._id}>
                         
-                        {event.imageUrl && (
+                        {events.imageUrl && (
                                     <img
-                                        src={event.imageUrl}
-                                        alt={event.title}
+                                        src={events.imageUrl}
+                                        alt={events.title}
                                         className="event-image"
                                         />
                                 )}
                         <div className="event-card" >
                                 <div className="event-info">
-                                    <h2>{event.title}</h2>
-                                    <p>When: {event.date}</p>
-                                    <p>{event.description}</p>
+                                    <h2>{events.title}</h2>
+                                    <p>When: {events.date}</p>
+                                    <p>{events.description}</p>
 
-                                    <Link to="/eventPhotos" className="event-photos-btn">Event Photos</Link>
+                                    <Link to={`/event-photos/${events._id}`} className="event-photos-btn">Event Photos</Link>
                                 </div>
                     </div>
 
@@ -268,7 +201,7 @@ export function RecentEvents(){
                     ))}
             </div>
 
-            {events.length === 0 && (
+            {event.length === 0 && (
                 <p>No events have been published yet.</p>
             )}
         </section>
