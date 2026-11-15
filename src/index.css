@@ -25,14 +25,12 @@ img {
 }
 
 .page-structure{
-
-    background: linear-gradient(
-
-        to right,
-
-        #224a11 50%, white 50%
-
-    );
+    display: flex;
+    flex-direction: column;
+    background-color: #132A1F;
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
 
 }
 
@@ -40,13 +38,7 @@ img {
 
 .header {
 
-    background: linear-gradient(
-
-        to right,
-
-        white 50%, #224a11 50%
-
-    );
+    background-color: #132A1F;
 
     display: flex;
 
@@ -92,7 +84,7 @@ img {
 
     font-size: 30px;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 
 }
 
@@ -114,7 +106,7 @@ img {
 
     text-decoration: underline;
 
-    text-underline-offset: 10px;
+    text-underline-offset: 5px;
 
 }
 
@@ -126,17 +118,16 @@ img {
 
 .book-now-btn{
 
-    background-color: white;
+    background-color: #b3974d;
 
-    color: green;
+    color: #132A1F;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 
     font-size: 25px;
 
     padding: 10px 20px;
 
-    border-radius: 50%;
 
     text-decoration: none;
 
@@ -146,17 +137,17 @@ img {
 
 .recent-events-btn{
 
-    background-color: white;
+    background-color: #b3974d;
 
-    color: green;
+    color: #132A1F;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 
     font-size: 25px;
 
     padding: 10px 20px;
 
-    border-radius: 50%;
+    
 
     text-decoration: none;
 
@@ -234,7 +225,7 @@ img {
 
     margin: 0;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 
 }
 
@@ -260,13 +251,12 @@ img {
 
     background-color: green;
 
-    font-size: 20px;
+    font-size: 25px;
 
-    padding: 12px 25px;
+    padding: 10px 20px;
 
     border: none;
 
-    border-radius: 6px;
 
     cursor: pointer;
 
@@ -276,7 +266,7 @@ img {
 
 .introduction {
 
-    background-color: #224a11;
+    background-color: #132A1F;
 
     display: grid;
 
@@ -334,7 +324,7 @@ img {
 
     font-size: 25px;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 
 }
 
@@ -358,11 +348,11 @@ img {
 
 .intro-book-now{
 
-    background-color: white;
+    background-color: #b3974d;
 
-    color: #224a11;
+    color: #132A1F;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 
     font-size: 25px;
 
@@ -370,7 +360,6 @@ img {
 
     text-decoration: none;
 
-    border-radius: 50%;
 
     cursor: pointer;
 
@@ -378,19 +367,17 @@ img {
 
 .intro-recent-events{
 
-    background-color: white;
+    background-color: #b3974d;
 
-    color: #224a11;
+    color: #132A1F;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 
     font-size: 25px;
 
     padding: 10px 20px;
 
     text-decoration: none;
-
-    border-radius: 50%;
 
     cursor: pointer;
 
@@ -408,7 +395,7 @@ width: 100%;
 
 gap: 0;
 
-  background-color: #224a11;
+  background-color: #132A1F;
 
 }
 
@@ -462,7 +449,8 @@ gap: 0;
 
   color:#b3974d;
 
-  font-family: cursive;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
 
   font-size: 25px;
 
@@ -480,7 +468,7 @@ gap: 0;
 
     gap: 0;
 
-    background-color: white;
+    background-color: #132A1F;
 
 }
 
@@ -516,7 +504,7 @@ gap: 0;
 
   font-size: 25px;
 
-  font-family: cursive;
+  font-family:'Times New Roman', Times, serif;
 
   font-weight: bold;
 
@@ -558,13 +546,7 @@ gap: 0;
 
     width: 100%;
 
-    background: linear-gradient(
-
-        to right,
-
-        #224a11 50%, white 50%
-
-    );
+    background-color: #132A1F;
 
 }
 
@@ -604,13 +586,13 @@ gap: 0;
 
 .tiers p{
 
-   font-size: 40px; 
+   font-size: 35px; 
 
    font-weight: bold;
    text-decoration: underline;
    text-underline-offset: 10px;
 
-   font-family: cursive;
+   font-family:'Times New Roman', Times, serif;
 
 }
 
@@ -638,7 +620,7 @@ gap: 0;
 
     text-align: center;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 
 }
 
@@ -654,13 +636,7 @@ gap: 0;
 
 .footer{
 
-  background: linear-gradient(
-
-        to right,
-
-        white 50%, #224a11 50%
-
-    );
+  background-color: black;
 
   display: flex;
 
@@ -669,6 +645,8 @@ gap: 0;
   align-items: center;
 
   gap: 35px;
+  width: 100%;
+  margin-top: auto;
 
 }
 
@@ -692,7 +670,7 @@ gap: 0;
 
     font-size: 20px;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 
     margin-right: 150px;
 
@@ -712,7 +690,7 @@ gap: 0;
 
   font-weight: bold;
 
-  font-family: cursive;
+  font-family:'Times New Roman', Times, serif;
 
   margin-right: 150px;
 
@@ -728,7 +706,7 @@ gap: 0;
 
     height: 100dvh;
 
-    background-color: #224a11;
+    background-color: #132A1F;
 
     display: flex;
 
@@ -748,7 +726,8 @@ gap: 0;
 
     color:#b3974d;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
 
 }
 
@@ -793,14 +772,14 @@ gap: 0;
     text-align: center;
     color:#b3974d;
     font-size: 30px;
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 }
 
 .event-photos-page h1{
 
     text-align: center;
     color: #b3974d;
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
     font-size: 50px;
     text-decoration: underline;
     text-underline-offset: 10px;
@@ -809,15 +788,14 @@ gap: 0;
 .event-photos-btn{
     background-color: #b3974d;
 
-    color: green;
+    color: #132A1F;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 
     font-size: 25px;
 
     padding: 10px 20px;
 
-    border-radius: 50%;
 
     text-decoration: none;
 
@@ -847,13 +825,7 @@ gap: 0;
 
 .contact-form{
 
-    background: linear-gradient(
-
-        to right,
-
-        #224a11 50%, white 50%
-
-    );
+    background-color: #132A1F;
 
 }
 
@@ -889,7 +861,7 @@ gap: 0;
 
   font-size: 30px;
 
-  font-family: cursive;
+  font-family:'Times New Roman', Times, serif;
 
 }
 
@@ -973,13 +945,7 @@ gap: 0;
 
 .instagram-section{
 
-   background: linear-gradient(
-
-        to right,
-
-        #224a11 50%, white 50%
-
-    );
+   background-color: #132A1F;
 
 }
 
@@ -987,7 +953,7 @@ gap: 0;
 
     text-align: center;
 
-    font-size: 50px;
+    font-size: 35px;
 
    text-decoration: underline;
 
@@ -995,7 +961,7 @@ gap: 0;
 
     color:#b3974d;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 
 }
 
@@ -1003,13 +969,7 @@ gap: 0;
 
     width: 100%;
 
-    background: linear-gradient(
-
-        to right,
-
-        #224a11 50%, white 50%
-
-    );
+    background-color: #132A1F;
 
 }
 
@@ -1039,11 +999,11 @@ gap: 0;
 
     text-align: center;
 
-    font-size: 50px;
+    font-size: 35px;
 
     color:#b3974d;
 
-    font-family: cursive;
+    font-family:'Times New Roman', Times, serif;
 
     text-decoration: underline;
 
@@ -1082,6 +1042,7 @@ gap: 0;
     height: 200px;
 
     color:#b3974d;
+    
 
 }
 
@@ -1125,13 +1086,13 @@ gap: 0;
 
     height: 50px;
 
-    color:#224a11;
+    color:#132A1F;
 
     font-size: 20px;
 
     background-color: white;
 
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
 
 }
 
@@ -1147,8 +1108,18 @@ gap: 0;
 
     font-size: 25px;
 
-    font-family: cursive;   
+    font-family:'Times New Roman', Times, serif;  
 
+}
+
+.event-photos-page{
+    background-color: #132A1F;
+    flex: 1;
+    text-align: center;
+    width: 100%;
+}
+.event-photos-page h1{
+    font-size: 35px;
 }
 
 /* RESPONSIVE OVERRIDES — original desktop styling preserved */

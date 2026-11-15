@@ -97,7 +97,8 @@ export default function EventPhotos(){
                         </div>
                     
                     {(!event.photos || event.photos.length === 0) && (
-                        <p>No photos available for this event.</p>
+                        <p>No photos available for this event. <br></br> Check back soon!</p>
+                        
                     )}
                 </div>
             )}

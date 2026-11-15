@@ -159,16 +159,16 @@ Built through passion and a love for bringing people together, Courtside Matcha 
                                                 <h1>PACKAGES</h1>
                                                 <ul>
                                                         <p>Tier 1: 20 Drink Package---$175</p>
-                                                        <li>Choice of TWO Signature Drinks</li>
+                                                                <li> - Choice of TWO Signature Drinks</li>
                                                         
-                                                        <p>Tier 2: 20 Drink Package---$175</p>
-                                                        <li>Choice of TWO Signature Drinks</li>
+                                                        <p>Tier 2: 25 Drink Package---$215</p>
+                                                                <li> - Choice of THREE Signature Drinks</li>
                                                         
-                                                        <p>Tier 3: 20 Drink Package---$175</p>
-                                                        <li>Choice of TWO Signature Drinks</li>
+                                                        <p>Tier 3: 30 Drink Package---$235</p>
+                                                                <li> - Choice of THREE Signature Drinks</li>
                                                         
-                                                        <p>Tier 4: 20 Drink Package---$175</p>
-                                                        <li>Choice of TWO Signature Drinks</li>
+                                                        <p>Tier 4: 30 Drink Package---$260</p>
+                                                                <li> - Choice of FOUR Signature Drinks</li>
                                                 </ul>
                                         </div>
                                 
@@ -176,15 +176,15 @@ Built through passion and a love for bringing people together, Courtside Matcha 
                                         <div className="drinks">
                                                 <h1>SIGNATURE DRINKS</h1>
                                                 
-                                                <p>Matcha Latte</p>
-                                                <p>Strawberry Matcha Latte</p>
-                                                <p>Lavender Matcha Latte</p>
-                                                <p>Vanilla Matcha Latte</p>
-                                                <p>Maple Cinnamon Matcha Latte</p>
-                                                <p>Banana Matcha Latte (Housemade Cream Top)</p>
-                                                <p>Double Matcha Latte (Housemade Cream Top)</p>
-                                                <p>Yuzu Matcha Tonic</p>
-                                                <p>Sparkling Matcha Lemonade</p>
+                                                        <p> - Matcha Latte</p>
+                                                        <p> - Strawberry Matcha Latte</p>
+                                                        <p> - Lavender Matcha Latte</p>
+                                                        <p> - Vanilla Matcha Latte</p>
+                                                        <p> - Maple Cinnamon Matcha Latte</p>
+                                                        <p> - Banana Matcha Latte (Housemade Cream Top)</p>
+                                                        <p> - Double Matcha Latte (Housemade Cream Top)</p>
+                                                        <p> - Yuzu Matcha Tonic</p>
+                                                        <p> - Sparkling Matcha Lemonade</p>
                                                 
                                         </div>
                         </div>
@@ -203,7 +203,7 @@ Built through passion and a love for bringing people together, Courtside Matcha 
                         <div className="footer-socials">
                             <h3>Follow</h3>
                             <a href="https://www.instagram.com/courtsidematchaclub/" target="_blank" rel="noopener noreferrer" className="icon"><i class="bi bi-instagram"></i></a>
-                            <p>Stay In Touch!</p>
+                            <h3>Stay In Touch!</h3>
                         </div>
                   </div>
 
